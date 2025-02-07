@@ -1,12 +1,12 @@
-const newman = require("newman");
-//require("dotenv").config();
+const newman = require('newman');
+require('dotenv').config();
 
-console.log(`API Key: ${process.env.secretKey}`);
 
 newman.run(
   {
-    collection: `https://documenter.getpostman.com/view/40659331/2sAYQghoo6?access_key=${process.env.secretKey}`,
-    reporters: "htmlextra",
+    //collection: 'https://documenter.getpostman.com/view/40659331/2sAYQghoo6?access_key=${process.env.secretKey}',
+    collection: require('./collection/collection.json'),
+    reporters: 'htmlextra',
     iterationCount: 1, 
     reporter: {
       htmlextra: {
